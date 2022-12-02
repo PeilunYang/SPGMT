@@ -1,0 +1,49 @@
+dataset: beijing
+distance_type: TP
+cuda: 0
+
+dataset_size: 50000  # tdrive: 30000; beijing, porto: 50000
+train_set_size: 15000  # tdrive: 10000; beijing, porto: 15000
+vali_set_size: 20000  # tdrive: 14000; beijing, porto: 20000
+test_set_size: 50000  # tdrive: 30000; beijing, porto: 50000
+kseg: 5
+
+node_file: ./dataset/beijing/node.csv
+edge_file: ./dataset/beijing/edge_weight.csv
+traj_file: ./dataset/beijing/matching_result.csv
+shuffle_node_file: ./data/beijing/st_traj/shuffle_node_list.npy
+shuffle_coor_file: ./data/beijing/st_traj/shuffle_coor_list.npy
+shuffle_kseg_file: ./data/beijing/st_traj/shuffle_kseg_list.npy
+spatial_path_node_triplets: ./data/beijing/triplet/TP/node_triplets_50000_spatial
+spatial_path_triplets_truth: ./ground_truth/beijing/TP/train_triplet_50000_spatial.npy
+spatial_path_vali_truth: ./ground_truth/beijing/TP/vali_spa_distance.npy
+spatial_path_test_truth: ./ground_truth/beijing/TP/test_spa_distance.npy
+
+pointnum:  # The number of nodes in the network
+  beijing: 113000
+  porto: 129000
+  tdrive: 75000
+
+feature_size: 64  # node2vec feature size
+embedding_size: 64  # GNN embedding size
+date2vec_size: 64
+hidden_size: 128  # TRM hidden size
+num_layers: 1
+dropout_rate: 0
+learning_rate: 0.001
+concat: False
+epochs: 50000
+early_stop: 30
+gtraj:
+  train_batch: 32
+  test_batch: 32
+  usePE: True
+  useSI: True
+
+node2vec:
+  walk_length: 20
+  context_size: 10
+  walks_per_node: 10
+  num_neg_samples: 1
+  p: 1
+  q: 1
