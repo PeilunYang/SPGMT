@@ -4,7 +4,7 @@ Source codes for SPGMT
 
 ## Running Procedures:
 
-1. Download and process the trajectory datasets to obtain the trajectory representations over road networks. We provide an example dataset in this project.
+1. Download and process the trajectory datasets to obtain the trajectory representations over road networks. The URLs of datasets have been listed in our paper. In addition, we provide an example dataset in this project.
 2. Run 'spatial_preprocess.py' to obtain the initial structural embeddings for trajectories as well as data for training, validation and test.
 3. Run 'spatial_similarity_computation.py' to compute the pairwise point distances and ground truth similarities for trajectories.
 4. Run 'generate_node_knn.py' to get the kNN neighbors for each node in the road network.
